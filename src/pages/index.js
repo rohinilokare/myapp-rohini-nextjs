@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import SSRExample from './SSRExample';
 import SSGExample from './SSGExample';
+import { ClientSideRendering } from '@/components/ClientSideRendering';
 
 const RenderingTechniques = () => {
   const [renderingType, setRenderingType] = useState('');
@@ -41,7 +42,8 @@ const RenderingTechniques = () => {
         </li>
       </ul>
       {renderingType === 'SSR' && <SSRExample />}
-      {renderingType === 'SSG' && <SSGExample />}
+     {renderingType === 'SSG' && <SSGExample />}
+      <ClientSideRendering />
 
     </div>
   );
