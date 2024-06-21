@@ -3,16 +3,21 @@ import { useState } from 'react';
 import SSRExample from './SSRExample';
 import SSGExample from './SSGExample';
 import { ClientSideRendering } from '@/components/ClientSideRendering';
+import Login from '@/components/Login';
 
 const RenderingTechniques = () => {
   const [renderingType, setRenderingType] = useState('');
+  const [loggedInUser, setLoggedInUser] = useState({})
 
   const handleRenderingTypeChange = (type) => {
     setRenderingType(type);
   };
 
   return (
+    <>
+    {loggedInUser.username ?
     <div>
+      <h1> Welcome {loggedInUser.username}</h1>
       <h1>Rendering Techniques</h1>
       <ul>
         <li>
@@ -46,6 +51,9 @@ const RenderingTechniques = () => {
       <ClientSideRendering />
 
     </div>
+    :
+  <Login setLoggedInUser={setLoggedInUser} />}
+  </>
   );
 };
 
