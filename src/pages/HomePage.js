@@ -1,6 +1,7 @@
 // pages/index.js
 import React from 'react';
 import HelloWorld from '../components/HelloWorld';
+import Index from './index';
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       <p>
         4. <a href="/blog/1">Passing the blog id 1</a>
       </p>
+      <Index />
     </div>
   );
 };
